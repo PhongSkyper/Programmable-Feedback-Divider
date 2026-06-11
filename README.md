@@ -55,7 +55,7 @@ Dự án áp dụng kiến trúc Modular Multi-Modulus Divider (MMD) để giả
   <img src="schematic/mux1.png" alt="Khối hợp kênh MUX" width="400">
 </div>
 
-*Lưu ý: Có thể xem chi tiết luồng xử lý tại [datapath.pdf](schematic/datapath.pdf).*
+*Lưu ý: Có thể xem chi tiết Sơ đồ mạch tại [datapath.pdf](schematic/datapath.pdf).*
 
 ### 4. Kết luận và Hướng phát triển
 
