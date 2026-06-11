@@ -26,6 +26,12 @@ Dự án áp dụng kiến trúc Modular Multi-Modulus Divider (MMD) để giả
 * Nhóm đã tiến hành tinh chỉnh kích thước transistor (Sizing) theo nguyên lý nỗ lực logic để đảm bảo mạch hoạt động đúng ở 5 GHz.
 * Kết quả cho thấy mạch hoạt động ổn định ở các góc FFHH và TTNN, tuy nhiên tại góc chậm SSLL, mạch đã tiến sát tới giới hạn vận hành của công nghệ 45nm (phát hiện lỗi vi phạm Setup Time cực nhỏ).
 
+<div align="center">
+  <img src="schematic/div23_top.png" alt="Sơ đồ khối chia 2/3" width="400">
+  <br>
+  <img src="schematic/div23.png" alt="Sơ đồ chi tiết chia 2/3" width="600">
+</div>
+
 **Nhiệm vụ 2: Thiết kế bộ chia tần số 4/5/6/7 (Task 2)**
 
 * Hệ thống được mở rộng bằng cách ghép nối tiếp (cascade) 2 khối chia 2/3 từ Nhiệm vụ 1.
@@ -33,11 +39,23 @@ Dự án áp dụng kiến trúc Modular Multi-Modulus Divider (MMD) để giả
 * Tín hiệu hoạt động dựa trên đường truyền xung nhịp đi tới (Forward Path) và tín hiệu điều khiển hồi tiếp ngược lại (Backward Path).
 * Mô phỏng Transient cho thấy mạch tạo ra chu kỳ đầu ra hoàn toàn chính xác với lý thuyết. Nhóm cũng đã phân tích chi tiết giới hạn thời gian (Timing Margin) và chỉ ra rằng độ trễ của đường hồi tiếp chính là điểm nghẽn của hệ thống.
 
+<div align="center">
+  <img src="schematic/div4567.png" alt="Sơ đồ bộ chia 4/5/6/7" width="600">
+</div>
+
 **Nhiệm vụ 3: Thiết kế bộ chia toàn dải 2/3/4/5/6/7 (Task 3)**
 
 * Để khắc phục giới hạn của bộ chia nối tiếp (không thể chia các hệ số nhỏ như 2, 3), nhóm đã đề xuất bổ sung một khối hợp kênh (Multiplexer 3-to-1) ở ngõ ra và một cổng logic OR ở đường hồi tiếp.
 * Sự cải tiến này giúp đi tắt tín hiệu ngõ ra (bypass) và cô lập mạch vòng hồi tiếp, cho phép mạch linh hoạt chuyển đổi số tầng hoạt động.
 * Kết quả thu được: Mạch mô phỏng đáp ứng mượt mà toàn bộ dải chia từ 2 đến 7 mà không bị mất xung ở tần số 5 GHz. Tuy nhiên, việc đi qua MUX gây ra sự suy hao hiệu năng nhất định (làm tăng độ trễ lan truyền $t_{pd}$).
+
+<div align="center">
+  <img src="schematic/div234567.png" alt="Sơ đồ tổng thể bộ chia 2/3/4/5/6/7" width="800">
+  <br>
+  <img src="schematic/mux1.png" alt="Khối hợp kênh MUX" width="400">
+</div>
+
+*Lưu ý: Có thể xem chi tiết luồng xử lý tại [datapath.pdf](schematic/datapath.pdf).*
 
 ### 4. Kết luận và Hướng phát triển
 
